@@ -16,53 +16,6 @@ const double PI = acos(-1);
 const int MX = 1e7 + 123;
 const int inf = 2000000000;
 const ll infLL = 9000000000000000000;
-
-int dx[] = {0, 0, +1, -1, +1, +1, -1, -1};
-int dy[] = {+1, -1, 0, 0, +1, -1, +1, -1};
-
-inline void normal(ll &a)
-{
-    a %= MOD;
-    (a < 0) && (a += MOD);
-}
-inline ll modMul(ll a, ll b)
-{
-    a %= MOD, b %= MOD;
-    normal(a), normal(b);
-    return (a * b) % MOD;
-}
-inline ll modAdd(ll a, ll b)
-{
-    a %= MOD, b %= MOD;
-    normal(a), normal(b);
-    return (a + b) % MOD;
-}
-inline ll modSub(ll a, ll b)
-{
-    a %= MOD, b %= MOD;
-    normal(a), normal(b);
-    a -= b;
-    normal(a);
-    return a % MOD;
-}
-inline ll modPow(ll b, ll p)
-{
-    ll r = 1;
-    while (p)
-    {
-        if (p & 1)
-            r = modMul(r, b);
-        b = modMul(b, b);
-        p >>= 1;
-    }
-    return r;
-}
-inline ll modInverse(ll a) { return modPow(a, MOD - 2); }
-inline ll modDiv(ll a, ll b) { return modMul(a, modInverse(b)); }
-
-ll gcd(ll a, ll b) { return __gcd(a, b); }
-ll lcm(ll a, ll b) { return a * (b / __gcd(a, b)); }
-
 const int mx = 1e5 + 123;
 // Time Complexity O(N*log2(N))
 // Space Complexity O(N)
